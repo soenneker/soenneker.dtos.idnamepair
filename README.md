@@ -8,5 +8,5 @@
 ## Installation
 
 ```
-Install-Package Soenneker.Dtos.IdNamePair
+dotnet add package Soenneker.Dtos.IdNamePair
 ```
