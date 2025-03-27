@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
@@ -10,18 +9,15 @@ namespace Soenneker.Dtos.IdNamePair;
 /// The reason for this type (over something like KeyValuePair, dictionary) is because of JSON serialization support.
 /// </summary>
 /// <remarks>Record type, so avoid modification after initial construction.</remarks>
-[DataContract]
 public record IdNamePair
 {
     [Required]
-    [DataMember(Name = "id")]
     [JsonPropertyName("id")]
     [JsonProperty("id")]
-    public string Id { get; set; } = default!;
+    public string Id { get; set; } = null!;
 
     [Required]
-    [DataMember(Name = "name")]
     [JsonPropertyName("name")]
     [JsonProperty("name")]
-    public string Name { get; set; } = default!;
+    public string Name { get; set; } = null!;
 }
