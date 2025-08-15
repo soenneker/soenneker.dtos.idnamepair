@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
+using Soenneker.Attributes.PublicOpenApiObject;
 
 namespace Soenneker.Dtos.IdNamePair;
 
@@ -9,6 +10,7 @@ namespace Soenneker.Dtos.IdNamePair;
 /// The reason for this type (over something like KeyValuePair, dictionary) is because of JSON serialization support.
 /// </summary>
 /// <remarks>Record type, so avoid modification after initial construction.</remarks>
+[PublicOpenApiObject]
 public record IdNamePair
 {
     [Required]
