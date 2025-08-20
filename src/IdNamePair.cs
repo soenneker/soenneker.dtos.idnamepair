@@ -16,10 +16,10 @@ public record IdNamePair
     [Required]
     [JsonPropertyName("id")]
     [JsonProperty("id")]
-    public string Id { get; set; } = null!;
+    public required string Id { get; set; } = null!;
 
     [Required]
     [JsonPropertyName("name")]
     [JsonProperty("name")]
-    public string Name { get; set; } = null!;
+    public required string Name { get; set; } = null!;
 }
