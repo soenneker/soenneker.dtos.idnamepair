@@ -43,6 +43,6 @@
 
         
 
-        <PackageReference Include="Soenneker.Attributes.PublicOpenApiObject" Version="3.0.28" />
+        <PackageReference Include="Soenneker.Attributes.PublicOpenApiObject" Version="3.0.29" />
     </ItemGroup>
 </Project>
