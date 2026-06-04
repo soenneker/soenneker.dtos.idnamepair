@@ -13,11 +13,17 @@ namespace Soenneker.Dtos.IdNamePair;
 [PublicOpenApiObject]
 public record IdNamePair
 {
+    /// <summary>
+    /// The unique identifier.
+    /// </summary>
     [Required]
     [JsonPropertyName("id")]
     [JsonProperty("id")]
     public required string Id { get; set; } = null!;
 
+    /// <summary>
+    /// The display name.
+    /// </summary>
     [Required]
     [JsonPropertyName("name")]
     [JsonProperty("name")]
