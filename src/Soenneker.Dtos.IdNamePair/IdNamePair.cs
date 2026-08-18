@@ -6,15 +6,13 @@ using Soenneker.Attributes.PublicOpenApiObject;
 namespace Soenneker.Dtos.IdNamePair;
 
 /// <summary>
-/// A minimal Record type with an <see cref="Id"/> (string), <see cref="Name"/> (string), and maximum JSON compatibility. <para/>
-/// The reason for this type (over something like KeyValuePair, dictionary) is because of JSON serialization support.
+/// Provides a compact API reference to another resource using its stable identifier and human-readable display name.
 /// </summary>
-/// <remarks>Record type, so avoid modification after initial construction.</remarks>
 [PublicOpenApiObject]
 public record IdNamePair
 {
     /// <summary>
-    /// The unique identifier.
+    /// Stable unique identifier of the referenced resource.
     /// </summary>
     [Required]
     [JsonPropertyName("id")]
@@ -22,7 +20,7 @@ public record IdNamePair
     public required string Id { get; set; } = null!;
 
     /// <summary>
-    /// The display name.
+    /// Human-readable display name of the referenced resource.
     /// </summary>
     [Required]
     [JsonPropertyName("name")]
