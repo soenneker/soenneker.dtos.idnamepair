@@ -3,11 +3,23 @@
 [![](https://img.shields.io/nuget/dt/Soenneker.Dtos.IdNamePair.svg?style=for-the-badge)](https://www.nuget.org/packages/Soenneker.Dtos.IdNamePair/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.dtos.idnamepair/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.dtos.idnamepair/actions/workflows/codeql.yml)
 
-# ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Dtos.IdNamePair
-### A minimal Record type with an Id (string), Name (string), and maximum JSON compatibility
+# Soenneker.Dtos.IdNamePair
 
-## Installation
+Provides a compact API reference to another resource using its stable identifier and human-readable display name.
 
-```
+## Install
+
+```bash
 dotnet add package Soenneker.Dtos.IdNamePair
 ```
+
+## What you get
+
+- `IdNamePair` — Provides a compact API reference to another resource using its stable identifier and human-readable display name.
+
+## API at a glance
+
+| API | What it does | Result / important behavior |
+| --- | --- | --- |
+| `IdNamePair.Id` | Stable unique identifier of the referenced resource. | Stable unique identifier of the referenced resource. |
+| `IdNamePair.Name` | Human-readable display name of the referenced resource. | Human-readable display name of the referenced resource. |
