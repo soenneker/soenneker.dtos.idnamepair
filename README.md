@@ -5,21 +5,41 @@
 
 # Soenneker.Dtos.IdNamePair
 
-Provides a compact API reference to another resource using its stable identifier and human-readable display name.
+Represents a compact resource reference containing an identifier and display name.
 
-## Install
+## Installation
 
 ```bash
 dotnet add package Soenneker.Dtos.IdNamePair
 ```
 
-## What you get
+## Usage
 
-- `IdNamePair` — Provides a compact API reference to another resource using its stable identifier and human-readable display name.
+```csharp
+using Soenneker.Dtos.IdNamePair;
 
-## API at a glance
+var owner = new IdNamePair
+{
+    Id = "user-42",
+    Name = "Ada Lovelace"
+};
+```
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `IdNamePair.Id` | Stable unique identifier of the referenced resource. | Stable unique identifier of the referenced resource. |
-| `IdNamePair.Name` | Human-readable display name of the referenced resource. | Human-readable display name of the referenced resource. |
+Both System.Text.Json and Newtonsoft.Json serialize the record as:
+
+```json
+{
+  "id": "user-42",
+  "name": "Ada Lovelace"
+}
+```
+
+`required` enforces property assignment for normal C# construction, and `[Required]` supplies validation metadata. Neither mechanism validates identifier format, trims names, enforces uniqueness, or guarantees that deserialized input is valid; run your application’s validator at trust boundaries.
+
+Because this is a record, equality and hash codes include `Id` and `Name`. Both properties are mutable, so do not change them while an instance is being used as a dictionary key or stored in a hash set. Use `with` to create a changed copy when stable value semantics matter:
+
+```csharp
+IdNamePair renamed = owner with {Name = "Ada Byron"};
+```
+
+The type is marked with `PublicOpenApiObject` for Soenneker OpenAPI discovery.
