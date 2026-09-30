@@ -25,7 +25,7 @@ var owner = new IdNamePair
 };
 ```
 
-Both System.Text.Json and Newtonsoft.Json serialize the record as:
+System.Text.Json serializes the record as:
 
 ```json
 {
