@@ -40,6 +40,6 @@
         <None Include="..\..\README.md" Pack="true" PackagePath="\" />
         <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
         <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
-        <PackageReference Include="Soenneker.Attributes.PublicOpenApiObject" Version="4.0.63" />
+        <PackageReference Include="Soenneker.Attributes.PublicOpenApiObject" Version="4.0.64" />
     </ItemGroup>
 </Project>
